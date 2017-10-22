@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Cari Penduduk</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	
+	<div class="container">
+		<h1 class="page-header">Cari Penduduk</h1>
+		<div>
+			<label for="kota">Kota</label> 
+			<input class="form-control mr-sm-2"
+					type="text"
+					aria-label="Kota" 
+					name="kota" 
+					readonly="true" 
+					th:value="${kota.namaKota}"/>
+		</div>
+		<form th:object="${kecamatans}" action="/penduduk/cari" method="get">
+			<div>
+				<input type="hidden" name="kt" th:value="${kota.id}" />
+			</div>
+			<div>
+				<label for="kec">Kecamatan</label>
+				<select class="form-control" name="kc" required="true">
+				    <option value="0">Pilih Kecamatan</option>
+				    <option th:each="kecamatan : ${kecamatans}" th:value="${kecamatan.id}" th:text="${kecamatan.namaKecamatan}"></option>
+			    </select>
+			</div>
+	
+			<div>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
+

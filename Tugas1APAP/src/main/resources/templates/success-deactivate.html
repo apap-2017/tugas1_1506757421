@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Deaktifasi penduduk Penduduk</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	<h3>Sukses!</h3>
+	<p th:text="'Penduduk dengan NIK ' + ${nik} + ' sudah tidak aktif'"></p>
+</body>
+</html>

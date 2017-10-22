@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Tambah Penduduk</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	
+	<div class="container">
+		<h1 class="page-header">Add Penduduk</h1>
+
+		<form action="/penduduk/tambah" method="post">
+			<div class="form-group">
+				<label for="nama">Nama</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Nama"
+						aria-label="Nama" 
+						name="nama" 
+						th:value="${nama}"/>
+			</div>
+			<div class="form-group">
+				<label for="tempat_lahir">Tempat Lahir</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Tempat Lahir"
+						aria-label="Tempat Lahir" 
+						name="tempat_lahir" 
+						th:value="${tempat_lahir}"/>
+			</div>
+			<div class="form-group">
+				<label for="tanggal_lahir">Tanggal Lahir</label> 
+				<input class="form-control mr-sm-2"
+						type="date"
+						name="tanggal_lahir" 
+						th:value="${tanggal_lahir}"/>
+			</div>
+			<div class="form-group">
+				<label for="jenis_kelamin">Jenis Kelamin</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Jenis Kelamin"
+						aria-label="Jenis Kelamin" 
+						name="jenis_kelamin" th:value="${jenis_kelamin}"/>
+			</div>
+			<div class="form-group">
+				<label for="gol_darah">Golongan  Darah</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Golongan Darah"
+						aria-label="Golongan Darah" 
+						name="gol_darah" th:value="${gol_darah}"/>
+			</div>
+			<div class="form-group">
+				<label for="agama">Agama</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Agama"
+						aria-label="Agama" 
+						name="agama" th:value="${agama}"/>
+			</div>
+			<div class="form-group">
+				<label for="status_kawin">Status Perkawinan</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Status Perkawinan"
+						aria-label="Status Perkawinan" 
+						name="status_kawin" th:value="${status_kawin}"/>
+			</div>
+			<div class="form-group">
+				<label for="status_dalam_keluarga">Status Dalam Keluarga</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Status dalam Keluarga"
+						aria-label="Status dalam Keluarga" 
+						name="status_dalam_keluarga" th:value="${status_dalam_keluarga}"/>
+			</div>
+			<div class="form-group">
+				<label for="pekerjaan">Pekerjaan</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Pekerjaan"
+						aria-label="Pekerjaan" 
+						name="pekerjaan" th:value="${pekerjaan}"/>
+			</div>
+			<div class="form-group">
+				<label for="kewarganegaraan">Kewarganegaraan</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Kewarganegaraan"
+						aria-label="Kewarganegaraan" 
+						name="kewarganegaraan" th:value="${kewarganegaraan}"/>
+			</div>
+			<div class="form-group">
+				<label for="status_wafat">Status Kematian</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Status Kematian"
+						aria-label="Status Kematian" 
+						name="status_wafat" th:value="${status_wafat}"/>
+			</div>
+			<div class="form-group">
+				<label for="id_keluarga">ID Keluarga</label> 
+				<input class="form-control mr-sm-2"
+						type="number"
+						name="id_keluarga" th:value="${id_keluarga}"/>
+			</div>
+			
+			<div>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Simpan</button>
+			</div>
+		</form>
+	</div>
+
+</body>
+
+</html>
+

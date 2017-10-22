@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Detail Penduduk</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/view.css" />
+</head>
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+		
+	<div class="container">
+		<div class="page-header">
+			<h1 th:text="'Lihat Data Penduduk ' + ${penduduk.nik}"> NIK Penduduk</h1>
+		</div>
+		
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>NIK</th>
+					<td th:text="${penduduk.nik}">NIK</td>
+				</tr>
+				<tr>
+					<th>Nama</th>
+					<td th:text="${penduduk.nama}">Nama</td>
+				</tr>
+				<tr>
+					<th>Tempat/Tanggal Lahir</th>
+					<td th:text="${penduduk.tempatLahir} + '/' + ${penduduk.tanggalLahir}">TTL</td>
+				</tr>
+				<tr>
+					<th>Alamat</th>
+					<td th:text="${penduduk.alamat}">Alamat</td>
+				</tr>
+				<tr>
+					<th>RT/RW</th>
+					<td th:text="${penduduk.rt} + '/' + ${penduduk.rw}">RT/RW</td>
+				</tr>
+				<tr>
+					<th>Kelurahan/Desa</th>
+					<td th:text="${penduduk.kelurahan}">Kelurahan</td>
+				</tr>
+				<tr>
+					<th>Kecamatan</th>
+					<td th:text="${penduduk.kecamatan}">Kecamatan</td>
+				</tr>
+				<tr>
+					<th>Kota</th>
+					<td th:text="${penduduk.kota}">Kota</td>
+				</tr>
+				<tr>
+					<th>Golongan Darah</th>
+					<td th:text="${penduduk.golDarah}">Golongan Darah</td>
+				</tr>
+				<tr>
+					<th>Agama</th>
+					<td th:text="${penduduk.agama}">agama</td>
+				</tr>
+				<tr>
+					<th>Status Perkawinan</th>
+					<td th:text="${penduduk.statusKawin}">Status Kawin</td>
+				</tr>
+				<tr>
+				<th>Pekerjaan</th>
+					<td th:text="${penduduk.pekerjaan}">Pekerjaan</td>
+				</tr>
+				<tr>
+					<th>Kewarganegaraan</th>
+					<td th:text="${penduduk.isWni()}==true?'WNI':'WNA'">Kwn</td>
+				</tr>
+				<tr>
+					<th>Jenis Kelamin</th>
+					<td th:text="${penduduk.jenisKelamin}==0?'Laki-laki':'Perempuan'">Jekel</td>
+				</tr>
+				<tr>
+					<th>ID Keluarga</th>
+					<td th:text="${penduduk.idKeluarga}">ID Kel</td>
+				</tr>
+				<tr>
+					<th>Status Dalam Keluarga</th>
+					<td th:text="${penduduk.statusDalamKeluarga}">Stat dlm keluarga</td>
+				</tr>
+				<tr>
+					<th>Status Kematian</th>
+					<td th:text="${penduduk.isWafat()}==true?'Wafat':'Hidup'">isWafat</td>
+					<td>
+						<form action="/penduduk/mati" method="post">
+							<input type="hidden" name="nik" th:value="${penduduk.nik}"/>
+							<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Nonaktifkan</button>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

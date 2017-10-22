@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Cari Penduduk</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	
+	<div class="container">
+		<h1 class="page-header">Cari Penduduk</h1>
+		<div>
+			<label for="kota">Kota</label> 
+			<input class="form-control mr-sm-2"
+					type="text"
+					aria-label="Kota" 
+					name="kota" 
+					readonly="true" 
+					th:value="${kota.namaKota}"/>
+			<label for="kec">Kecamatan</label> 
+			<input class="form-control mr-sm-2"
+					type="text"
+					aria-label="Kecamatan" 
+					name="kec" 
+					readonly="true" 
+					th:value="${kec.namaKecamatan}"/>
+		</div>
+		<form  th:object="${kelurahans}" action="/penduduk/cari" method="get">
+			<div>
+				<input type="hidden" name="kt" th:value="${kota.id}" />
+			</div>
+			<div>
+				<input type="hidden" name="kc" th:value="${kec.id}" />
+			</div>
+			<div>
+				<label for="kl">Kelurahan</label>
+				<select class="form-control" name="kl" required="true">
+				    <option value="0">Pilih Kelurahan</option>
+				    <option th:each="kelurahan : ${kelurahans}" th:value="${kelurahan.id}" th:text="${kelurahan.namaKelurahan}"></option>
+			    </select>
+			</div>
+	
+			<div>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
+

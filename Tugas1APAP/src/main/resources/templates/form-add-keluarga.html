@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Tambah Keluarga</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div th:replace="fragments/fragment :: header"></div>
+	
+	<div class="container">
+		<h1 class="page-header">Add Keluarga</h1>
+	
+		<form action="/keluarga/tambah" method="post">
+			<div>
+				<label for="alamat">Alamat</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Alamat"
+						aria-label="Alamat" name="alamat" th:value="${alamat}"/>
+			</div>
+			<div>
+				<label for="rt">RT</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="RT"
+						aria-label="Jenis Kelamin"
+						name="rt" th:value="${rt}"/>
+			</div>
+			<div>
+				<label for="rw">RW</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="RW"
+						aria-label="RW"
+						name="rw" th:value="${rw}"/>
+			</div>
+			<div>
+				<label for="kelurahan">Kelurahan</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Kelurahan"
+						aria-label="Kelurahan"
+						name="kelurahan" th:value="${kelurahan}"/>
+			</div>
+			<div>
+				<label for="kecamatan">Kecamatan</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Kecamatan"
+						aria-label="Kecamatan" 
+						name="kecamatan" th:value="${kecamatan}"/>
+			</div>
+			<div>
+				<label for="kota">Kota</label> 
+				<input class="form-control mr-sm-2"
+						type="text"
+						placeholder="Kota"
+						aria-label="Kota"
+						name="kota" th:value="${kota}"/>
+			</div>
+			
+			<div>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Simpan</button>
+			</div>
+		</form>
+	</div>
+	
+</body>
+
+</html>
+
